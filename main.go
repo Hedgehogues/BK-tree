@@ -49,18 +49,17 @@ func (tree *Tree) Search(object ObjectVertex, tolerance int) []Result {
 	}
 	candidates := []*Node{tree.root}
 	for len(candidates) != 0 {
-		c := candidates[len(candidates)-1]
 		candidates = candidates[:len(candidates)-1]
-		d := c.objectVertex.Distance(object)
+		d := candidates[len(candidates)-1].objectVertex.Distance(object)
 		if d <= tolerance {
 			results = append(results, Result{
 				Distance: d,
-				Object:   c.objectVertex,
+				Object:   candidates[len(candidates)-1].objectVertex,
 			})
 		}
 
 		low, high := d-tolerance, d+tolerance
-		for distance, c := range c.children {
+		for distance, c := range candidates[len(candidates)-1].children {
 			if low <= distance && distance <= high {
 				candidates = append(candidates, c)
 			}
