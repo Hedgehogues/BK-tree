@@ -13,6 +13,11 @@ type Tree struct {
 	root *Node
 }
 
+type Result struct {
+	Distance int
+	Object   ObjectVertex
+}
+
 func (node *Node) insert(object ObjectVertex) {
 	dist := node.objectVertex.Distance(object)
 	for newNode, ok := node.children[dist]; ok; newNode, ok = node.children[dist] {
@@ -35,4 +40,31 @@ func (tree *Tree) Insert(object ObjectVertex) {
 		return
 	}
 	tree.root.insert(object)
+}
+
+func (tree *Tree) Search(object ObjectVertex, tolerance int) []Result {
+	results := make([]Result, 0)
+	if tree.root == nil {
+		return results
+	}
+	candidates := []*Node{tree.root}
+	for len(candidates) != 0 {
+		c := candidates[len(candidates)-1]
+		candidates = candidates[:len(candidates)-1]
+		d := c.objectVertex.Distance(object)
+		if d <= tolerance {
+			results = append(results, Result{
+				Distance: d,
+				Object:   c.objectVertex,
+			})
+		}
+
+		low, high := d-tolerance, d+tolerance
+		for distance, c := range c.children {
+			if low <= distance && distance <= high {
+				candidates = append(candidates, c)
+			}
+		}
+	}
+	return results
 }
