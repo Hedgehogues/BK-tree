@@ -13,10 +13,10 @@ There is some sources with BK-trees:
 
 In addition to my implementation, there are several more:
 
-* [agatan](https://github.com/agatan/bktree/blob/master/bktree.go)
-* [mukulrawat1986](https://github.com/mukulrawat1986/bktree-go/blob/master/bktree/bktree.go)
-* [gansidui](https://github.com/gansidui/bktree/blob/master/bktree.go)
-* [maccman](https://github.com/maccman/bktree/blob/master/bktree.go)
+* [agatan (any objects, any metrics, only int distance, use interface)](https://github.com/agatan/bktree/blob/master/bktree.go)
+* [mukulrawat1986 (only string, only levenshtein, only int distance)](https://github.com/mukulrawat1986/bktree-go/blob/master/bktree/bktree.go)
+* [gansidui (only string, only levenshtein, only int distance)](https://github.com/gansidui/bktree/blob/master/bktree.go)
+* [maccman (any objects, any metrics, only int distance, use calback function for metrics)](https://github.com/maccman/bktree/blob/master/bktree.go)
 * [hjr265](https://github.com/hjr265/go-bktree/blob/master/bktree.go)
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
@@ -36,10 +36,11 @@ In addition to my implementation, there are several more:
 
 Помимо моей реализации, есть ещё несколько:
 
-* [agatan](https://github.com/agatan/bktree/blob/master/bktree.go)
-* [mukulrawat1986](https://github.com/mukulrawat1986/bktree-go/blob/master/bktree/bktree.go)
-* [gansidui](https://github.com/gansidui/bktree/blob/master/bktree.go)
-* [maccman](https://github.com/maccman/bktree/blob/master/bktree.go)
+
+* [agatan (any objects, any metrics, only int distance, use interface)](https://github.com/agatan/bktree/blob/master/bktree.go)
+* [mukulrawat1986 (only string, only levenshtein, only int distance)](https://github.com/mukulrawat1986/bktree-go/blob/master/bktree/bktree.go)
+* [gansidui (only string, only levenshtein, only int distance)](https://github.com/gansidui/bktree/blob/master/bktree.go)
+* [maccman (any objects, any metrics, only int distance, use calback function for metrics)](https://github.com/maccman/bktree/blob/master/bktree.go)
 * [hjr265](https://github.com/hjr265/go-bktree/blob/master/bktree.go)
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
