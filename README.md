@@ -21,7 +21,9 @@ In addition to my implementation, there are several more:
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
 
-My implementation was made agatan-style code. I modified these sources and made more speedly used map.
+My implementation was made agatan-style code. I modified these sources and made more speedly used map. 
+
+These trees can be used for fuzzy information retrieval, as well as for other data analysis tasks. For example, these trees are closely related to the kNN algorithm.
 
 # BK-деревья
 
@@ -47,3 +49,5 @@ My implementation was made agatan-style code. I modified these sources and made 
 * [vy](https://github.com/vy/bk-tree)
 
 Моя реализация сделана в стиле agatan. Я модифицировал его код и сделал его чуть быстрее при помощи map.
+
+Эти деревья можно использовать для нечёткого информационного поиска, а также для иных задач анализа данных. Так, например, эти деревья тесно связаны с алгоритмом kNN.
