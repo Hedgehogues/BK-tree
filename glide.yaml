@@ -1,0 +1,9 @@
+package: bitbucket.org/egorsteam/bk-tree
+license: MIT
+owners:
+- name: Egor Urvanov
+  email: hedgehogues@bk.ru
+  hash-tags: /# hedgehogues
+import:
+- package: github.com/creasty/go-levenshtein
+  vcs:     git

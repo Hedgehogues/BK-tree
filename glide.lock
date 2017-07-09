@@ -1,0 +1,7 @@
+hash: 1babfb6a875709aeb242e71f9948f5bda1e2928839fe7f745c2c88da420c7e4d
+updated: 2017-07-10T02:36:37.680517174+03:00
+imports:
+- name: github.com/creasty/go-levenshtein
+  version: 38ce641d5030ebe5a391cbbe4b796031a99ff228
+  vcs: git
+testImports: []

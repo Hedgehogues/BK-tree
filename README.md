@@ -27,6 +27,12 @@ These trees can be used for fuzzy information retrieval, as well as for other da
 
 It is also worth noting that these trees can be generalized using a probabilistic model and used as a spell checker. To do this, it is necessary to select words in the radius R from the given one and take into account the proximity of other words to the ones found. Plus, this will take into account the frequency of words in the investigated case of documents (if it is available).
 
+To start the project, you need to set dependencies with [glide](https://glide.readthedocs.io/en/latest/). Steps:
+* Set environment $GOPATH
+* execute `curl https://glide.sh/get | sh`
+* execute `go get -u github.com/Masterminds/glide`
+* execute in work directory `glide install`
+
 # BK-деревья
 
 Об этих деревьях написано в нескольких источниках:
@@ -55,3 +61,13 @@ It is also worth noting that these trees can be generalized using a probabilisti
 Эти деревья можно использовать для нечёткого информационного поиска, а также для иных задач анализа данных. Так, например, эти деревья тесно связаны с [алгоритмом kNN](https://kallistec.wordpress.com/tag/k-nearest-neighbors/).
 
 Также стоит заметить, что данные деревья можно обобщить с использованием вероятностной модели и использовать как spell checker. Для этого необходимо выбирать слова в радиусе R от заданного и учитывать близость других слов к найденным. Плюсом к этому будет учёт частоты слов в исследуемом корпусе документов (если он есть в наличии).
+
+В отношении BK-деревьев у меня есть некоторое непонимание. Очевидно, что имея две вершины, принадлежащие одной и той же ветке, мы легко можем сказать, что:
+
+
+
+Чтобы запустить пакеты, необходимо установить [glide](https://glide.readthedocs.io/en/latest/). Шаги:
+* Установить переменную окружения $GOPATH
+* Выполните `curl https://glide.sh/get | sh`
+* Выполните `go get -u github.com/Masterminds/glide`
+* В рабочей директории пакета выполните `glide install`
