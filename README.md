@@ -79,12 +79,6 @@ On the other hand, if A, B, or C pairwise belong to different branches of differ
 С другой стороны, если A, B или C попарно принадлежат разным веткам различных поддеревьев, то в таком случае будет выполняться неравенство треугольника или нет?
 
 Чтобы запустить пакеты, необходимо установить [glide](https://glide.readthedocs.io/en/latest/). Шаги:
-* Установить переменную окружения $GOPATH
-* Выполните `curl https://glide.sh/get | sh`
-* Выполните `go get -u github.com/Masterminds/glide`
-* В рабочей директории пакета выполните `glide install`
-
-Чтобы запустить пакеты, необходимо установить [glide](https://glide.readthedocs.io/en/latest/). Шаги:
 
 * Установить переменную окружения `$GOPATH`
 
