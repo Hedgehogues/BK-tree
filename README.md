@@ -21,6 +21,8 @@ In addition to my implementation, there are several more:
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
 
+My implementation was made agatan-style code. I modified these sources and made more speedly used map.
+
 # BK-деревья
 
 Об этих деревьях написано в нескольких источниках:
@@ -36,7 +38,6 @@ In addition to my implementation, there are several more:
 
 Помимо моей реализации, есть ещё несколько:
 
-
 * [agatan (any objects, any metrics, only int distance, use interface)](https://github.com/agatan/bktree/blob/master/bktree.go)
 * [mukulrawat1986 (only string, only levenshtein, only int distance)](https://github.com/mukulrawat1986/bktree-go/blob/master/bktree/bktree.go)
 * [gansidui (only string, only levenshtein, only int distance)](https://github.com/gansidui/bktree/blob/master/bktree.go)
@@ -44,3 +45,5 @@ In addition to my implementation, there are several more:
 * [hjr265](https://github.com/hjr265/go-bktree/blob/master/bktree.go)
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
+
+Моя реализация сделана в стиле agatan. Я модифицировал его код и сделал его чуть быстрее при помощи map.
