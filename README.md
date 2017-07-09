@@ -25,6 +25,8 @@ My implementation was made agatan-style code. I modified these sources and made 
 
 These trees can be used for fuzzy information retrieval, as well as for other data analysis tasks. For example, these trees are closely related to the [kNN algorithm](https://kallistec.wordpress.com/tag/k-nearest-neighbors/).
 
+It is also worth noting that these trees can be generalized using a probabilistic model and used as a spell checker. To do this, it is necessary to select words in the radius R from the given one and take into account the proximity of other words to the ones found. Plus, this will take into account the frequency of words in the investigated case of documents (if it is available).
+
 # BK-деревья
 
 Об этих деревьях написано в нескольких источниках:
@@ -51,3 +53,5 @@ These trees can be used for fuzzy information retrieval, as well as for other da
 Моя реализация сделана в стиле agatan. Я модифицировал его код и сделал его чуть быстрее при помощи map.
 
 Эти деревья можно использовать для нечёткого информационного поиска, а также для иных задач анализа данных. Так, например, эти деревья тесно связаны с [алгоритмом kNN](https://kallistec.wordpress.com/tag/k-nearest-neighbors/).
+
+Также стоит заметить, что данные деревья можно обобщить с использованием вероятностной модели и использовать как spell checker. Для этого необходимо выбирать слова в радиусе R от заданного и учитывать близость других слов к найденным. Плюсом к этому будет учёт частоты слов в исследуемом корпусе документов (если он есть в наличии).
