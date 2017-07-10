@@ -21,7 +21,7 @@ In addition to my implementation, there are several more:
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
 
-My implementation was made agatan-style code. I modified these sources and made more speedly used map.
+My implementation was made [agatan](https://github.com/agatan/bktree/blob/master/bktree.go)-style code. I modified these sources and made more speedly used map. In my implementation there is abstract type for distance (float32, int and your other types) in front of [agatan](https://github.com/agatan/bktree/blob/master/bktree.go) implementation.
 
 These trees can be used for fuzzy information retrieval, as well as for other data analysis tasks. For example, these trees are closely related to the [kNN algorithm](https://kallistec.wordpress.com/tag/k-nearest-neighbors/).
 
@@ -29,7 +29,11 @@ It is also worth noting that these trees can be generalized using a probabilisti
 
 To start the project, you need to set dependencies with [glide](https://glide.readthedocs.io/en/latest/). Steps:
 
-* Set environment `$GOPATH`
+* set environment `$GOPATH`
+
+* download packages `go get bitbucket.org/egorsteam/bk-tree`
+
+To install dependencies you need:
 
 * execute `curl https://glide.sh/get | sh`
 
@@ -66,7 +70,7 @@ On the other hand, if A, B, or C pairwise belong to different branches of differ
 * [umahmood](https://github.com/umahmood/bktree/blob/master/bktree.go)
 * [vy](https://github.com/vy/bk-tree)
 
-Моя реализация сделана в стиле agatan. Я модифицировал его код и сделал его чуть быстрее при помощи map.
+Моя реализация сделана в стиле [agatan](https://github.com/agatan/bktree/blob/master/bktree.go). Я модифицировал его код и сделал его чуть быстрее при помощи map. В отличие от реализации [agatan](https://github.com/agatan/bktree/blob/master/bktree.go), в моей есть абстрактный тип расстояния (float32, int и любой другой Ваш тип).
 
 Эти деревья можно использовать для нечёткого информационного поиска, а также для иных задач анализа данных. Так, например, эти деревья тесно связаны с [алгоритмом kNN](https://kallistec.wordpress.com/tag/k-nearest-neighbors/).
 
@@ -81,6 +85,10 @@ On the other hand, if A, B, or C pairwise belong to different branches of differ
 Чтобы запустить пакеты, необходимо установить [glide](https://glide.readthedocs.io/en/latest/). Шаги:
 
 * Установить переменную окружения `$GOPATH`
+
+* Скачайте пакет с исходниками `go get bitbucket.org/egorsteam/bk-tree`
+
+Чтобы разрешить зависимости, Вам нужно:
 
 * Выполните `curl https://glide.sh/get | sh`
 
