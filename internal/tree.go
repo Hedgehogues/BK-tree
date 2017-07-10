@@ -1,13 +1,5 @@
 package internal
 
-// Тип вынесен в интерфейс, так как в ряде случаев может быть необходим целочисленный тип. В иных случаях --
-// вещественный
-type TypeOfDistance interface {
-	More(TypeOfDistance) bool
-	Plus(TypeOfDistance) TypeOfDistance
-	Minus(TypeOfDistance) TypeOfDistance
-}
-
 type ObjectTree interface {
 	Distance(ObjectTree) TypeOfDistance
 }

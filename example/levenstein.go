@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	levenshtein "github.com/creasty/go-levenshtein"
+
 	"bitbucket.org/egorsteam/bk-tree/internal"
+	levenshtein "github.com/creasty/go-levenshtein"
 )
 
 type word string
 
 // Distance calculates hamming distance.
-func (x word) Distance(e internal.ObjectTree) int {
+func (x word) Distance(e internal.ObjectTree) internal.TypeOfDistance {
 	a := string(x)
 	b := string(e.(word))
 
-	return levenshtein.Distance(a, b)
+	return internal.Int(levenshtein.Distance(a, b))
 }
 
 func main() {
@@ -25,7 +26,7 @@ func main() {
 	}
 
 	// spell check
-	results := tree.Search(word("peacn"), 2)
+	results := tree.Search(word("peacn"), internal.Int(2))
 	fmt.Println("Input is peacn. Did you mean:")
 	for _, result := range results {
 		fmt.Printf("\t%s (distance: %d)\n", result.Object.(word), result.Distance)
