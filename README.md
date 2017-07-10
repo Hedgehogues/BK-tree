@@ -29,7 +29,11 @@ It is also worth noting that these trees can be generalized using a probabilisti
 
 To start the project, you need to set dependencies with [glide](https://glide.readthedocs.io/en/latest/). Steps:
 
-* Set environment `$GOPATH`
+* set environment `$GOPATH`
+
+* download packages `go get bitbucket.org/egorsteam/bk-tree`
+
+To install dependencies you need:
 
 * execute `curl https://glide.sh/get | sh`
 
@@ -81,6 +85,10 @@ On the other hand, if A, B, or C pairwise belong to different branches of differ
 Чтобы запустить пакеты, необходимо установить [glide](https://glide.readthedocs.io/en/latest/). Шаги:
 
 * Установить переменную окружения `$GOPATH`
+
+* Скачайте пакет с исходниками `go get bitbucket.org/egorsteam/bk-tree`
+
+Чтобы разрешить зависимости, Вам нужно:
 
 * Выполните `curl https://glide.sh/get | sh`
 
