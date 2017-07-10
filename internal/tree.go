@@ -1,12 +1,20 @@
 package internal
 
+// Тип вынесен в интерфейс, так как в ряде случаев может быть необходим целочисленный тип. В иных случаях --
+// вещественный
+type TypeOfDistance interface {
+	More(TypeOfDistance) bool
+	Plus(TypeOfDistance) TypeOfDistance
+	Minus(TypeOfDistance) TypeOfDistance
+}
+
 type ObjectTree interface {
-	Distance(ObjectTree) int
+	Distance(ObjectTree) TypeOfDistance
 }
 
 type Node struct {
 	objectTree ObjectTree
-	children   map[int]*Node
+	children   map[TypeOfDistance]*Node
 }
 
 type Tree struct {
@@ -14,7 +22,7 @@ type Tree struct {
 }
 
 type Result struct {
-	Distance int
+	Distance TypeOfDistance
 	Object   ObjectTree
 }
 
@@ -24,9 +32,10 @@ func (node *Node) insert(object ObjectTree) {
 		node = newNode
 		dist = node.objectTree.Distance(object)
 	}
+
 	node.children[dist] = &Node{
 		objectTree: object,
-		children:   map[int]*Node{},
+		children:   map[TypeOfDistance]*Node{},
 	}
 	return
 }
@@ -34,7 +43,7 @@ func (node *Node) insert(object ObjectTree) {
 func (tree *Tree) Insert(object ObjectTree) {
 	if tree.Root == nil {
 		tree.Root = &Node{
-			children:   map[int]*Node{},
+			children:   map[TypeOfDistance]*Node{},
 			objectTree: object,
 		}
 		return
@@ -42,7 +51,7 @@ func (tree *Tree) Insert(object ObjectTree) {
 	tree.Root.insert(object)
 }
 
-func (tree *Tree) Search(object ObjectTree, tolerance int) []Result {
+func (tree *Tree) Search(object ObjectTree, tolerance TypeOfDistance) []Result {
 	results := make([]Result, 0)
 	if tree.Root == nil {
 		return results
@@ -52,16 +61,18 @@ func (tree *Tree) Search(object ObjectTree, tolerance int) []Result {
 		lastElement := candidates[len(candidates)-1]
 		candidates = candidates[:len(candidates)-1]
 		dist := lastElement.objectTree.Distance(object)
-		if dist <= tolerance {
+		if !dist.More(tolerance) {
+			// dist <= tolerance
 			results = append(results, Result{
 				Distance: dist,
 				Object:   lastElement.objectTree,
 			})
 		}
 
-		low, high := dist-tolerance, dist+tolerance
+		low, high := dist.Minus(tolerance), dist.Plus(tolerance)
 		for distance, candidate := range lastElement.children {
-			if low <= distance && distance <= high {
+			if !low.More(distance) && !distance.More(high) {
+				// low <= distance && distance <= high
 				candidates = append(candidates, candidate)
 			}
 		}

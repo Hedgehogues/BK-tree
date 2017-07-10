@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+
 	"bitbucket.org/egorsteam/bk-tree/internal"
 )
 
 type hashValue uint16
 
 // Distance calculates hamming distance.
-func (h hashValue) Distance(e internal.ObjectTree) int {
+func (h hashValue) Distance(e internal.ObjectTree) internal.TypeOfDistance {
 	a := uint16(h)
 	b := uint16(e.(hashValue))
 
@@ -20,7 +21,7 @@ func (h hashValue) Distance(e internal.ObjectTree) int {
 		}
 		k <<= 1
 	}
-	return d
+	return internal.Int(d)
 }
 
 func main() {
@@ -31,7 +32,7 @@ func main() {
 	}
 
 	// search neighbors of 0x00000000 whose distances are less than or equal to 1.
-	results := tree.Search(hashValue(0), 2)
+	results := tree.Search(hashValue(0), internal.Int(2))
 	for _, result := range results {
 		fmt.Printf("%016b (distance: %d)\n", result.Object.(hashValue), result.Distance)
 	}
